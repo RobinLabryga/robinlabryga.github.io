@@ -29,7 +29,7 @@ class ThemeManager {
   }
 
   getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
 
   applyTheme(theme) {
@@ -60,10 +60,10 @@ class ThemeManager {
     this.themeToggle?.addEventListener('click', () => this.toggle());
 
     // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)')
+    window.matchMedia('(prefers-color-scheme: light)')
       .addEventListener('change', (e) => {
         if (!this.getStoredTheme()) {
-          this.theme = e.matches ? 'dark' : 'light';
+          this.theme = e.matches ? 'light' : 'dark';
           this.applyTheme(this.theme);
         }
       });

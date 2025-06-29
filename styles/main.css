@@ -2,27 +2,30 @@
    CSS Custom Properties (Variables)
    =========================== */
 :root {
-    /* Colors - Light theme */
-    --color-primary: hsl(217, 91%, 60%);
-    --color-primary-dark: hsl(217, 91%, 45%);
-    --color-primary-light: hsl(217, 91%, 70%);
-    --color-secondary: hsl(342, 89%, 48%);
-    --color-accent: hsl(51, 100%, 50%);
+    /* Unified color scheme - optimized for dark mode */
+    --color-primary: hsl(217, 91%, 70%);
+    --color-primary-dark: hsl(217, 91%, 60%);
+    --color-primary-light: hsl(217, 91%, 80%);
+    --color-secondary: hsl(342, 89%, 58%);
+    --color-accent: hsl(51, 100%, 60%);
 
-    /* Neutral colors */
-    --color-text: hsl(210, 11%, 15%);
-    --color-text-muted: hsl(210, 11%, 40%);
-    --color-text-light: hsl(210, 11%, 60%);
-    --color-background: hsl(0, 0%, 100%);
-    --color-surface: hsl(210, 17%, 98%);
-    --color-border: hsl(210, 14%, 89%);
-    --color-border-light: hsl(210, 14%, 95%);
+    /* Dark theme neutral colors (default) */
+    --color-text: hsl(210, 20%, 98%);
+    --color-text-muted: hsl(210, 10%, 75%);
+    --color-text-light: hsl(210, 10%, 65%);
+    --color-background: hsl(210, 20%, 4%);
+    --color-surface: hsl(210, 15%, 8%);
+    --color-border: hsl(210, 15%, 25%);
+    --color-border-light: hsl(210, 15%, 20%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* HSL values for use with alpha */
+    --color-background-hsl: 210, 20%, 4%;
+
+    /* Shadows - Dark theme */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
 
     /* Typography */
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -86,36 +89,54 @@
     --z-tooltip: 1070;
 }
 
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
+/* Light theme override - same colors, different backgrounds/text */
+@media (prefers-color-scheme: light) {
     :root {
-        --color-primary: hsl(217, 91%, 65%);
-        --color-primary-dark: hsl(217, 91%, 55%);
-        --color-primary-light: hsl(217, 91%, 75%);
+        /* Keep same color scheme */
+        /* --color-primary, --color-secondary, --color-accent stay the same */
 
-        --color-text: hsl(210, 40%, 95%);
-        --color-text-muted: hsl(210, 15%, 70%);
-        --color-text-light: hsl(210, 15%, 60%);
-        --color-background: hsl(210, 11%, 8%);
-        --color-surface: hsl(210, 11%, 11%);
-        --color-border: hsl(210, 11%, 20%);
-        --color-border-light: hsl(210, 11%, 15%);
+        /* Only change backgrounds, text, and shadows */
+        --color-text: hsl(210, 15%, 10%);
+        --color-text-muted: hsl(210, 10%, 35%);
+        --color-text-light: hsl(210, 8%, 55%);
+        --color-background: hsl(0, 0%, 100%);
+        --color-surface: hsl(210, 20%, 97%);
+        --color-border: hsl(210, 15%, 85%);
+        --color-border-light: hsl(210, 15%, 92%);
+
+        /* HSL values for use with alpha */
+        --color-background-hsl: 0, 0%, 100%;
+
+        /* Light theme shadows */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 }
 
-/* Manual dark theme toggle */
-[data-theme="dark"] {
-    --color-primary: hsl(217, 91%, 65%);
-    --color-primary-dark: hsl(217, 91%, 55%);
-    --color-primary-light: hsl(217, 91%, 75%);
+/* Manual light theme toggle - same colors, different backgrounds/text */
+[data-theme="light"] {
+    /* Keep same color scheme */
+    /* --color-primary, --color-secondary, --color-accent stay the same */
 
-    --color-text: hsl(210, 40%, 95%);
-    --color-text-muted: hsl(210, 15%, 70%);
-    --color-text-light: hsl(210, 15%, 60%);
-    --color-background: hsl(210, 11%, 8%);
-    --color-surface: hsl(210, 11%, 11%);
-    --color-border: hsl(210, 11%, 20%);
-    --color-border-light: hsl(210, 11%, 15%);
+    /* Only change backgrounds, text, and shadows */
+    --color-text: hsl(210, 15%, 10%);
+    --color-text-muted: hsl(210, 10%, 35%);
+    --color-text-light: hsl(210, 8%, 55%);
+    --color-background: hsl(0, 0%, 100%);
+    --color-surface: hsl(210, 20%, 97%);
+    --color-border: hsl(210, 15%, 85%);
+    --color-border-light: hsl(210, 15%, 92%);
+
+    /* HSL values for use with alpha */
+    --color-background-hsl: 0, 0%, 100%;
+
+    /* Light theme shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* ===========================
@@ -265,21 +286,11 @@ a:focus {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: hsla(var(--color-background-hsl), 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border-light);
     z-index: var(--z-fixed);
-    transition: background-color var(--transition-normal);
-}
-
-[data-theme="dark"] .site-header {
-    background: rgba(16, 20, 24, 0.95);
-}
-
-@media (prefers-color-scheme: dark) {
-    .site-header {
-        background: rgba(16, 20, 24, 0.95);
-    }
+    transition: all var(--transition-normal);
 }
 
 .nav-container {
@@ -375,7 +386,7 @@ a:focus {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
+    background: hsla(var(--color-background-hsl), 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     display: flex;
@@ -391,20 +402,6 @@ a:focus {
     z-index: var(--z-fixed);
 }
 
-[data-theme="dark"] .nav-menu {
-    background: rgba(16, 20, 24, 0.95);
-}
-
-@media (prefers-color-scheme: dark) {
-    .nav-menu {
-        background: rgba(16, 20, 24, 0.95);
-    }
-
-    [data-theme="light"] .nav-menu {
-        background: rgba(255, 255, 255, 0.95);
-    }
-}
-
 .nav-menu.nav-menu--open {
     opacity: 1;
     visibility: visible;
@@ -418,10 +415,16 @@ a:focus {
 
     .nav-menu {
         position: static;
+        width: auto;
+        height: auto;
         flex-direction: row;
         gap: var(--space-lg);
         background: none;
+        backdrop-filter: none;
+        opacity: 1;
+        visibility: visible;
         transform: none;
+        transition: none;
     }
 }
 
@@ -497,34 +500,20 @@ a:focus {
     font-size: 1.25rem;
 }
 
+.theme-icon--light {
+    display: none;
+}
+
 .theme-icon--dark {
-    display: none;
-}
-
-[data-theme="dark"] .theme-icon--light {
-    display: none;
-}
-
-[data-theme="dark"] .theme-icon--dark {
     display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-    .theme-icon--light {
-        display: none;
-    }
+[data-theme="light"] .theme-icon--light {
+    display: block;
+}
 
-    .theme-icon--dark {
-        display: block;
-    }
-
-    [data-theme="light"] .theme-icon--light {
-        display: block;
-    }
-
-    [data-theme="light"] .theme-icon--dark {
-        display: none;
-    }
+[data-theme="light"] .theme-icon--dark {
+    display: none;
 }
 
 /* ===========================
