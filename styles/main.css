@@ -835,32 +835,6 @@ a:focus {
     line-height: var(--line-height-relaxed);
 }
 
-.skills-title {
-    margin-bottom: var(--space-xl);
-    color: var(--color-text);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-md);
-}
-
-.skill-item {
-    background: var(--color-background);
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
-    font-weight: 500;
-    transition: all var(--transition-fast);
-    border: 1px solid var(--color-border);
-}
-
-.skill-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-primary);
-}
-
 /* ===========================
    Projects Section
    =========================== */
@@ -1122,33 +1096,6 @@ a:focus {
 .about-details h3 {
     margin-bottom: var(--space-xl);
     color: var(--color-text);
-}
-
-.skills-categories {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-}
-
-.skill-category h4 {
-    margin-bottom: var(--space-md);
-    color: var(--color-primary);
-    font-size: var(--font-size-lg);
-}
-
-.skill-category ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-category li {
-    padding: var(--space-sm) 0;
-    color: var(--color-text-muted);
-    border-bottom: 1px solid var(--color-border-light);
-}
-
-.skill-category li:last-child {
-    border-bottom: none;
 }
 
 /* Navigation active state */

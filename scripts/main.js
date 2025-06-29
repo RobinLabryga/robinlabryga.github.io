@@ -264,7 +264,7 @@ class ScrollAnimations {
 
     // Observe elements that should animate on scroll
     const animatedElements = document.querySelectorAll(
-      '.section-title, .about-content, .project-card, .contact-content, .skill-item'
+      '.section-title, .about-content, .project-card, .contact-content'
     );
 
     animatedElements.forEach(el => {
