@@ -485,10 +485,13 @@ a:focus {
     align-items: center;
     justify-content: center;
     transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
 }
 
 .theme-toggle:hover {
     background: var(--color-border);
+    transform: scale(1.05);
 }
 
 .theme-toggle:focus {
@@ -496,24 +499,40 @@ a:focus {
     outline-offset: 2px;
 }
 
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 .theme-icon {
     font-size: 1.25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .theme-icon--light {
-    display: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(180deg) scale(0.5);
+    pointer-events: none;
 }
 
 .theme-icon--dark {
-    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
 }
 
 [data-theme="light"] .theme-icon--light {
-    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    pointer-events: auto;
 }
 
 [data-theme="light"] .theme-icon--dark {
-    display: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-180deg) scale(0.5);
+    pointer-events: none;
 }
 
 /* ===========================
