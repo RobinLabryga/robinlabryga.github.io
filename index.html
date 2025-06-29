@@ -1,4 +1,272 @@
-Hey, you should be redirected. If not, click <a href="https://www.linkedin.com/in/robin-labryga/">here</a>.
-<script>
-    window.location.href = 'https://www.linkedin.com/in/robin-labryga/';
-</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Robin Labryga - Personal website showcasing random things I do.">
+    <meta name="keywords" content="Robin Labryga, portfolio, personal, professional">
+    <meta name="author" content="Robin Labryga">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robinlabryga.github.io/">
+    <meta property="og:title" content="Robin Labryga - Personal Website">
+    <meta property="og:description" content="Welcome to my personal website showcasing random things I do">
+    <meta property="og:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://robinlabryga.github.io/">
+    <meta property="twitter:title" content="Robin Labryga - Personal Website">
+    <meta property="twitter:description" content="Welcome to my personal website showcasing random things I do">
+    <meta property="twitter:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+
+    <title>Robin Labryga - Personal Website</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./styles/main.css" as="style">
+    <link rel="preload" href="./scripts/main.js" as="script">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5f1a64fc22.js" crossorigin="anonymous"></script>
+
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#1d4ed8" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="alternate icon" href="./assets/favicon.ico">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Robin Labryga",
+        "url": "https://robinlabryga.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/robin-labryga/",
+            "https://twitter.com/RobinLabryga",
+            "https://gitlab.com/robin.labryga",
+            "https://github.com/RobinLabryga"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with navigation -->
+    <header class="site-header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="#home" class="brand-link" aria-label="Robin Labryga - Home">
+                    <span class="brand-text">Robin Labryga</span>
+                </a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <i class="fa-regular fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
+                <i class="fa-regular fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="hero-title" class="hero-title">
+                            <span class="hero-greeting">Hello, I'm</span>
+                            <span class="hero-name">Robin Labryga</span>
+                        </h1>
+                        <p class="hero-subtitle">PhD student at the University of Hamburg</p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn--primary">View my Projects</a>
+                            <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-avatar">
+                            <img src="./assets/avatar.jpg" alt="Robin Labryga" class="avatar-placeholder">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            I'm a PhD student at the University of Hamburg, passionate about clean, efficient code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project1-placeholder.svg" alt="Project 1 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project One</h3>
+                            <p class="project-description">
+                                Real project will appear here, once I get around to adding them.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Vulkan</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Website</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project2-placeholder.svg" alt="Project 2 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Two</h3>
+                            <p class="project-description">
+                                Real project will appear here, once I get around to adding them.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Torch</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Website</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project3-placeholder.svg" alt="Project 3 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">This Website</h3>
+                            <p class="project-description"></p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Vibe Coding</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://robinlabryga.github.io/" class="project-link">Website</a>
+                                <a href="https://github.com/RobinLabryga/robinlabryga.github.io"
+                                    class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <p class="contact-description">
+                        I'm always interested in new opportunities and collaborations.
+                        Feel free to reach out if you'd like to discuss a project or just say hello!
+                    </p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/robin-labryga/" class="contact-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin contact-icon" aria-hidden="true"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://twitter.com/RobinLabryga" class="contact-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-twitter contact-icon" aria-hidden="true"></i>
+                            Twitter
+                        </a>
+                        <a href="https://github.com/RobinLabryga" class="contact-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-github contact-icon" aria-hidden="true"></i>
+                            GitHub
+                        </a>
+                        <a href="https://gitlab.com/robin.labryga" class="contact-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-brands fa-gitlab contact-icon" aria-hidden="true"></i>
+                            GitLab
+                        </a>
+                        <a href="mailto:robin.labryga@uni-hamburg.de" class="contact-link">
+                            <i class="fa-regular fa-envelope contact-icon" aria-hidden="true"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    © 2025 Robin Labryga.
+                </p>
+                <p class="footer-tech">
+                    Made using HTML, CSS, and JavaScript
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

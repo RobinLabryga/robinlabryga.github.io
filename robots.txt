@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://robinlabryga.github.io/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
