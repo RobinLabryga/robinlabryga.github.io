@@ -1,7 +1,7 @@
 {
     "name": "Robin Labryga - Personal Website",
     "short_name": "Robin Labryga",
-    "description": "Personal website showcasing my professional journey and projects",
+    "description": "Personal website showcasing random things I do.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

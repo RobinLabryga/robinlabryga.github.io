@@ -1,14 +1,5 @@
 /**
- * Personal Website - Modern JavaScript (ES2024)
  * Robin Labryga - 2025
- * 
- * Features:
- * - Mobile navigation
- * - Dark/light theme toggle
- * - Smooth scrolling
- * - Intersection Observer animations
- * - Performance optimizations
- * - Accessibility support
  */
 
 'use strict';
