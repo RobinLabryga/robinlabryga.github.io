@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Robin Labryga - Personal website showcasing my professional journey and projects">
+    <meta name="keywords" content="Robin Labryga, portfolio, developer, professional">
+    <meta name="author" content="Robin Labryga">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robinlabryga.github.io/">
+    <meta property="og:title" content="Robin Labryga - Personal Website">
+    <meta property="og:description"
+        content="Welcome to my personal website showcasing my professional journey and projects">
+    <meta property="og:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://robinlabryga.github.io/">
+    <meta property="twitter:title" content="Robin Labryga - Personal Website">
+    <meta property="twitter:description"
+        content="Welcome to my personal website showcasing my professional journey and projects">
+    <meta property="twitter:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+
+    <title>Robin Labryga - Personal Website</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./styles/main.css" as="style">
+    <link rel="preload" href="./scripts/main.js" as="script">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1d4ed8" media="(prefers-color-scheme: dark)">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="alternate icon" href="./assets/favicon.ico">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Robin Labryga",
+        "url": "https://robinlabryga.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/robin-labryga/"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with navigation -->
+    <header class="site-header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="#home" class="brand-link" aria-label="Robin Labryga - Home">
+                    <span class="brand-text">Robin Labryga</span>
+                </a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <svg class="theme-icon theme-icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon theme-icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="hero-title" class="hero-title">
+                            <span class="hero-greeting">Hello, I'm</span>
+                            <span class="hero-name">Robin Labryga</span>
+                        </h1>
+                        <p class="hero-subtitle">Building innovative solutions and crafting digital experiences</p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn--primary">View My Work</a>
+                            <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-avatar">
+                            <img src="./assets/avatar-placeholder.svg" alt="Robin Labryga" class="avatar-placeholder">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            I'm passionate about creating meaningful digital experiences that solve real-world problems.
+                            With a focus on clean code, user-centered design, and innovative solutions, I strive to
+                            build applications that make a positive impact.
+                        </p>
+                        <div class="skills">
+                            <h3 class="skills-title">Skills & Technologies</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item">Frontend Development</div>
+                                <div class="skill-item">Backend Architecture</div>
+                                <div class="skill-item">User Experience</div>
+                                <div class="skill-item">Problem Solving</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project1-placeholder.svg" alt="Project 1 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project One</h3>
+                            <p class="project-description">
+                                A brief description of your first project highlighting the key features and technologies
+                                used.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project2-placeholder.svg" alt="Project 2 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Two</h3>
+                            <p class="project-description">
+                                A brief description of your second project highlighting the key features and
+                                technologies used.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="./assets/project3-placeholder.svg" alt="Project 3 preview"
+                                class="project-placeholder">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Three</h3>
+                            <p class="project-description">
+                                A brief description of your third project highlighting the key features and technologies
+                                used.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">PWA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <p class="contact-description">
+                        I'm always interested in new opportunities and collaborations.
+                        Feel free to reach out if you'd like to discuss a project or just say hello!
+                    </p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/robin-labryga/" class="contact-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:contact@example.com" class="contact-link">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    © 2025 Robin Labryga. Built with modern web standards and best practices.
+                </p>
+                <p class="footer-tech">
+                    Made with ❤️ using HTML, CSS, and JavaScript
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
