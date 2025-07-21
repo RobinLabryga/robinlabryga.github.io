@@ -84,6 +84,7 @@
 
             <ul class="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#papers" class="nav-link">Papers</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -108,6 +109,7 @@
                         </h1>
                         <p class="hero-subtitle">PhD student at the University of Hamburg</p>
                         <div class="hero-actions">
+                            <a href="#papers" class="btn btn--primary">View my Papers</a>
                             <a href="#projects" class="btn btn--primary">View my Projects</a>
                             <a href="#contact" class="btn btn--secondary">Get In Touch</a>
                         </div>
@@ -136,6 +138,38 @@
                             I'm a PhD student at the University of Hamburg, passionate about clean, efficient code.
                         </p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Papers Section -->
+        <section id="papers" class="papers" aria-labelledby="papers-title">
+            <div class="container">
+                <h2 id="papers-title" class="section-title">Research Papers</h2>
+                <div class="papers-grid">
+                    <article class="paper-card">
+                        <div class="paper-content">
+                            <h3 class="paper-title">Information Preserving Line Search via Bayesian
+                                Optimization</h3>
+                            <p class="paper-description">
+                                Line search is a fundamental part of iterative optimization methods for unconstrained and bound-constrained optimization problems to determine suitable step lengths that provide sufficient improvement in each iteration. Traditional line search methods are based on iterative interval refinement, where valuable information about function value and gradient is discarded in each iteration. We propose a line search method via Bayesian optimization, preserving and utilizing otherwise discarded information to improve step-length choices. Our approach is guaranteed to converge and shows superior performance compared to state-of-the-art methods based on empirical tests on the challenging unconstrained and bound-constrained optimization problems from the CUTEst test set.
+                            </p>
+                            <div class="paper-meta">
+                                <span class="paper-year">2025</span>
+                                <span class="paper-status">Research</span>
+                                <div class="paper-keywords">
+                                    <span class="keyword-tag">Nonlinear Optimization</span>
+                                    <span class="keyword-tag">Line Search</span>
+                                    <span class="keyword-tag">Regression</span>
+                                    <span class="keyword-tag">Bayesian Optimization</span>
+                                    <span class="keyword-tag">Gaussian Process</span>
+                                </div>
+                            </div>
+                            <div class="paper-links">
+                                <a href="./papers/bayesian_line_search.html" class="paper-link">Read Paper</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
