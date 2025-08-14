@@ -1003,6 +1003,23 @@ a:focus {
     border-color: var(--color-primary);
 }
 
+.paper-authors {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.paper-author {
+    color: var(--color-primary);
+    font-weight: 500;
+    padding: var(--space-sm) 0;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.paper-author:hover {
+    border-bottom-color: var(--color-primary);
+}
+
 .paper-links {
     display: flex;
     gap: var(--space-md);
