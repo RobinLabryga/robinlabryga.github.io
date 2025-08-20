@@ -11,6 +11,7 @@ const urlsToCache = [
   '/scripts/main.js',
   '/assets/favicon.svg',
   '/assets/avatar.jpg',
+  '/assets/GeoProdViz2D.png',
   '/assets/project1-placeholder.svg',
   '/assets/project2-placeholder.svg',
   '/assets/project3-placeholder.svg',
