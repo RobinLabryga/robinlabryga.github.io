@@ -13,15 +13,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://robinlabryga.github.io/">
     <meta property="og:title" content="Robin Labryga - Personal Website">
-    <meta property="og:description" content="Welcome to my personal website showcasing random things I do">
-    <meta property="og:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+    <meta property="og:description" content="Robin Labryga - Personal website showcasing random things I do.">
+    <!-- <meta property="og:image" content="https://robinlabryga.github.io/assets/og-image.jpg"> -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://robinlabryga.github.io/">
     <meta property="twitter:title" content="Robin Labryga - Personal Website">
-    <meta property="twitter:description" content="Welcome to my personal website showcasing random things I do">
-    <meta property="twitter:image" content="https://robinlabryga.github.io/assets/og-image.jpg">
+    <meta property="twitter:description" content="Robin Labryga - Personal website showcasing random things I do.">
+    <!-- <meta property="twitter:image" content="https://robinlabryga.github.io/assets/og-image.jpg"> -->
 
     <title>Robin Labryga - Personal Website</title>
 
@@ -149,8 +149,7 @@
                 <div class="papers-grid">
                     <article class="paper-card">
                         <div class="paper-content">
-                            <h3 class="paper-title">Information Preserving Line Search via Bayesian
-                                Optimization</h3>
+                            <h3 class="paper-title">Information Preserving Line Search via Bayesian Optimization</h3>
                             <div class="paper-authors">
                                 <a href="/" class="paper-author">Robin Labryga</a>
                                 <a href="https://tomo61098.github.io/" class="paper-author">Tomislav Prusina</a>
@@ -337,6 +336,21 @@
 
     <!-- Scripts -->
     <script src="./scripts/main.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>

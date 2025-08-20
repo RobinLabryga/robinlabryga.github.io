@@ -10,10 +10,11 @@ const urlsToCache = [
   '/styles/main.css',
   '/scripts/main.js',
   '/assets/favicon.svg',
-  '/assets/avatar-placeholder.svg',
+  '/assets/avatar.jpg',
   '/assets/project1-placeholder.svg',
   '/assets/project2-placeholder.svg',
-  '/assets/project3-placeholder.svg'
+  '/assets/project3-placeholder.svg',
+  '/manifest.json'
 ];
 
 // Install event - cache resources
