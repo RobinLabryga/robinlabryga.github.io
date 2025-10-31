@@ -9,7 +9,7 @@
     --color-secondary: hsl(342, 89%, 58%);
     --color-accent: hsl(51, 100%, 60%);
 
-    /* Dark theme neutral colors (default) */
+    /* Dark theme neutral colors */
     --color-text: hsl(210, 20%, 98%);
     --color-text-muted: hsl(210, 10%, 75%);
     --color-text-light: hsl(210, 10%, 65%);
@@ -21,7 +21,7 @@
     /* HSL values for use with alpha */
     --color-background-hsl: 210, 20%, 4%;
 
-    /* Shadows - Dark theme */
+    /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
@@ -87,56 +87,6 @@
     --z-modal: 1050;
     --z-popover: 1060;
     --z-tooltip: 1070;
-}
-
-/* Light theme override - same colors, different backgrounds/text */
-@media (prefers-color-scheme: light) {
-    :root {
-        /* Keep same color scheme */
-        /* --color-primary, --color-secondary, --color-accent stay the same */
-
-        /* Only change backgrounds, text, and shadows */
-        --color-text: hsl(210, 15%, 10%);
-        --color-text-muted: hsl(210, 10%, 35%);
-        --color-text-light: hsl(210, 8%, 55%);
-        --color-background: hsl(0, 0%, 100%);
-        --color-surface: hsl(210, 20%, 97%);
-        --color-border: hsl(210, 15%, 85%);
-        --color-border-light: hsl(210, 15%, 92%);
-
-        /* HSL values for use with alpha */
-        --color-background-hsl: 0, 0%, 100%;
-
-        /* Light theme shadows */
-        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-}
-
-/* Manual light theme toggle - same colors, different backgrounds/text */
-[data-theme="light"] {
-    /* Keep same color scheme */
-    /* --color-primary, --color-secondary, --color-accent stay the same */
-
-    /* Only change backgrounds, text, and shadows */
-    --color-text: hsl(210, 15%, 10%);
-    --color-text-muted: hsl(210, 10%, 35%);
-    --color-text-light: hsl(210, 8%, 55%);
-    --color-background: hsl(0, 0%, 100%);
-    --color-surface: hsl(210, 20%, 97%);
-    --color-border: hsl(210, 15%, 85%);
-    --color-border-light: hsl(210, 15%, 92%);
-
-    /* HSL values for use with alpha */
-    --color-background-hsl: 0, 0%, 100%;
-
-    /* Light theme shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* ===========================
@@ -470,69 +420,6 @@ a:focus {
         box-shadow: none;
         border: none;
     }
-}
-
-/* Theme Toggle */
-.theme-toggle {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: none;
-    border-radius: var(--radius-full);
-    background: var(--color-surface);
-    color: var(--color-text);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-fast);
-    position: relative;
-    overflow: hidden;
-}
-
-.theme-toggle:hover {
-    background: var(--color-border);
-    transform: scale(1.05);
-}
-
-.theme-toggle:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
-.theme-toggle:active {
-    transform: scale(0.95);
-}
-
-.theme-icon {
-    font-size: 1.25rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
-}
-
-.theme-icon--light {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(180deg) scale(0.5);
-    pointer-events: none;
-}
-
-.theme-icon--dark {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-}
-
-[data-theme="light"] .theme-icon--light {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-    pointer-events: auto;
-}
-
-[data-theme="light"] .theme-icon--dark {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(-180deg) scale(0.5);
-    pointer-events: none;
 }
 
 /* ===========================
@@ -1170,7 +1057,6 @@ a:focus {
 @media print {
 
     .site-header,
-    .theme-toggle,
     .nav-toggle,
     .scroll-indicator {
         display: none;
