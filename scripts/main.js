@@ -5,72 +5,6 @@
 'use strict';
 
 // ===========================
-// Theme Management
-// ===========================
-class ThemeManager {
-  constructor() {
-    this.theme = this.getStoredTheme() || this.getSystemTheme();
-    this.themeToggle = document.querySelector('.theme-toggle');
-    this.init();
-  }
-
-  init() {
-    this.applyTheme(this.theme);
-    this.bindEvents();
-  }
-
-  getStoredTheme() {
-    try {
-      return localStorage.getItem('theme');
-    } catch (error) {
-      console.warn('LocalStorage not available:', error);
-      return null;
-    }
-  }
-
-  getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  }
-
-  applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    this.updateThemeToggleAriaLabel(theme);
-    this.storeTheme(theme);
-  }
-
-  updateThemeToggleAriaLabel(theme) {
-    const newLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-    this.themeToggle?.setAttribute('aria-label', newLabel);
-  }
-
-  storeTheme(theme) {
-    try {
-      localStorage.setItem('theme', theme);
-    } catch (error) {
-      console.warn('Cannot store theme preference:', error);
-    }
-  }
-
-  toggle() {
-    this.theme = this.theme === 'dark' ? 'light' : 'dark';
-    this.applyTheme(this.theme);
-  }
-
-  bindEvents() {
-    this.themeToggle?.addEventListener('click', () => this.toggle());
-
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: light)')
-      .addEventListener('change', (e) => {
-        if (!this.getStoredTheme()) {
-          this.theme = e.matches ? 'light' : 'dark';
-          this.applyTheme(this.theme);
-        }
-      });
-  }
-}
-
-// ===========================
 // Mobile Navigation
 // ===========================
 class MobileNavigation {
@@ -472,7 +406,6 @@ class App {
       // Initialize all components
       this.components = [
         new ErrorHandler(),
-        new ThemeManager(),
         new MobileNavigation(),
         new SmoothScroller(),
         new ScrollAnimations(),
