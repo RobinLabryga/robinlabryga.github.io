@@ -1072,98 +1072,16 @@ a:focus {
     }
 }
 
-/* ===========================
-   Page-specific Styles
-   =========================== */
-.page-hero {
-    padding: var(--space-5xl) 0 var(--space-4xl);
-    background: var(--color-surface);
-    text-align: center;
-}
-
-.page-title {
-    margin-bottom: var(--space-md);
-}
-
-.page-subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-muted);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.about-detailed {
-    padding: var(--space-5xl) 0;
-}
-
-.about-grid {
-    display: grid;
-    gap: var(--space-4xl);
-    align-items: start;
-}
-
-@media (min-width: 768px) {
-    .about-grid {
-        grid-template-columns: 2fr 1fr;
-    }
-}
-
-.about-text h2 {
-    margin-bottom: var(--space-xl);
-    color: var(--color-text);
-}
-
 .about-text p {
     margin-bottom: var(--space-lg);
     line-height: var(--line-height-relaxed);
     color: var(--color-text-muted);
 }
 
-.about-details h3 {
-    margin-bottom: var(--space-xl);
-    color: var(--color-text);
-}
-
 /* Navigation active state */
 .nav-link[aria-current="page"] {
     color: var(--color-primary);
     font-weight: 600;
-}
-
-/* ===========================
-   Additional Components
-   =========================== */
-.breadcrumb {
-    padding: var(--space-lg) 0;
-    background: var(--color-surface);
-}
-
-.breadcrumb-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: var(--space-sm);
-    align-items: center;
-}
-
-.breadcrumb-item {
-    color: var(--color-text-muted);
-}
-
-.breadcrumb-item:not(:last-child)::after {
-    content: '/';
-    margin-left: var(--space-sm);
-    color: var(--color-text-light);
-}
-
-.breadcrumb-link {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-.breadcrumb-link:hover {
-    text-decoration: underline;
 }
 
 /* ===========================
@@ -1199,47 +1117,6 @@ a:focus {
 
 .margin-top-0 {
     margin-top: 0;
-}
-
-/* ===========================
-   Loading States
-   =========================== */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.skeleton {
-    background: linear-gradient(90deg,
-            var(--color-border-light) 25%,
-            var(--color-border) 50%,
-            var(--color-border-light) 75%);
-    background-size: 200% 100%;
-    animation: skeleton-loading 1.5s infinite;
-}
-
-@keyframes skeleton-loading {
-    0% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: -200% 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .skeleton {
-        animation: none;
-    }
-}
-
-/* ===========================
-   Enhanced Focus Styles
-   =========================== */
-.focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
 }
 
 /* ===========================
