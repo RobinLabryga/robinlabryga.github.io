@@ -16,6 +16,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [
+      // Only produces manifest.webmanifest/registerSW.js; sw.js is generated
+      // separately, see scripts/generate-sw.mjs.
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',

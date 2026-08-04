@@ -1,3 +1,5 @@
+// vite-plugin-pwa's SW generation doesn't fire under Astro's build, so this
+// reproduces it manually. Proper fix (@vite-pwa/astro) doesn't support Astro 7 yet.
 import { generateSW } from 'workbox-build';
 
 const { count, size, warnings } = await generateSW({
