@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((entry) => ({
+    params: { slug: entry.id },
+    props: { arxivUrl: entry.data.arxivUrl, title: entry.data.title },
+  }));
+}
+
+const { arxivUrl, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <link rel="canonical" href={arxivUrl} />
+    <meta http-equiv="refresh" content={`0; url=${arxivUrl}`} />
+  </head>
+  <body>
+    Redirecting to <a href={arxivUrl}>{arxivUrl}</a>&hellip;
+  </body>
+</html>

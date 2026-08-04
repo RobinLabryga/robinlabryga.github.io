@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import PaperCard from './PaperCard.astro';
+
+const papers = await getCollection('papers');
+---
+
+<section id="papers" class="papers" aria-labelledby="papers-title">
+  <div class="container">
+    <h2 id="papers-title" class="section-title">Research Papers</h2>
+    <div class="papers-grid">
+      {papers.map((entry) => <PaperCard entry={entry} />)}
+    </div>
+  </div>
+</section>

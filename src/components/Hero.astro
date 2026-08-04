@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../assets/images/avatar.jpg';
+---
+
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-greeting">Hello, I'm</span>
+          <span class="hero-name">Robin Labryga</span>
+        </h1>
+        <p class="hero-subtitle">PhD student @ University of Hamburg</p>
+        <div class="hero-actions">
+          <a href="#papers" class="btn btn--primary">Papers</a>
+          <a href="#projects" class="btn btn--primary">Projects</a>
+          <a href="#contact" class="btn btn--secondary">Contact</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-avatar">
+          <Image src={avatar} alt="Robin Labryga" class="avatar-placeholder" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+</section>

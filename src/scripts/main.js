@@ -223,7 +223,6 @@ class PerformanceOptimizer {
 
   init() {
     this.lazyLoadImages();
-    this.preloadCriticalResources();
     this.optimizeScrollPerformance();
   }
 
@@ -257,22 +256,6 @@ class PerformanceOptimizer {
 
     document.querySelectorAll('img[data-src]').forEach(img => {
       imageObserver.observe(img);
-    });
-  }
-
-  preloadCriticalResources() {
-    // Preload important resources
-    const criticalResources = [
-      { href: './styles/main.css', as: 'style' },
-      { href: './scripts/main.js', as: 'script' }
-    ];
-
-    criticalResources.forEach(resource => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = resource.href;
-      link.as = resource.as;
-      document.head.appendChild(link);
     });
   }
 
@@ -422,21 +405,6 @@ class App {
 
 // Start the application
 new App();
-
-// ===========================
-// Service Worker Registration
-// ===========================
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(registration => {
-        console.log('SW registered: ', registration);
-      })
-      .catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-      });
-  });
-}
 
 // ===========================
 // CSS Animation Classes

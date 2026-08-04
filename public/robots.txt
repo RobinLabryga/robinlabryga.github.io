@@ -3,7 +3,7 @@ Allow: /
 Allow: /GeoProdViz2D
 
 # Sitemap
-Sitemap: https://robinlabryga.github.io/sitemap.xml
+Sitemap: https://robinlabryga.github.io/sitemap-index.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1

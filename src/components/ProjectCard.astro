@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-image">
+    {typeof project.image === 'string' ? (
+      <img src={project.image} alt={`${project.title} preview`} class="project-placeholder" />
+    ) : (
+      <Image src={project.image} alt={project.title} class="project-placeholder" />
+    )}
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">{project.title}</h3>
+    <p class="project-description">{project.description}</p>
+    <div class="project-tech">
+      {project.tech.map((tech) => <span class="tech-tag">{tech}</span>)}
+    </div>
+    <div class="project-links">
+      <a href={project.websiteUrl} class="project-link">Website</a>
+      <a href={project.sourceUrl} class="project-link">Source Code</a>
+    </div>
+  </div>
+</article>
