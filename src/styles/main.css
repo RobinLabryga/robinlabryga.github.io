@@ -193,6 +193,14 @@ a:focus {
 }
 
 /* ===========================
+   Keyboard Navigation Focus
+   =========================== */
+.keyboard-navigation *:focus {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: 2px !important;
+}
+
+/* ===========================
    Layout Components
    =========================== */
 .container {
@@ -352,4 +360,18 @@ a:focus {
 
 .margin-top-0 {
     margin-top: 0;
+}
+
+/* ===========================
+   Scroll Reveal (see src/scripts/scroll-reveal.ts)
+   =========================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }

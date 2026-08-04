@@ -29,7 +29,11 @@ import '../styles/main.css';
       </div>
     </main>
 
-    <script src="../scripts/main.js"></script>
+    <script>
+      import { initPage } from '../scripts/page';
+
+      initPage();
+    </script>
     <script is:inline src="/registerSW.js"></script>
   </body>
 </html>

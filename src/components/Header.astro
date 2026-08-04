@@ -221,3 +221,54 @@
     font-weight: 600;
   }
 </style>
+
+<script>
+  const navToggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const navMenu = document.querySelector<HTMLUListElement>('.nav-menu');
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+
+  if (navToggle && navMenu) {
+    let isOpen = false;
+
+    const setOpen = (open: boolean) => {
+      isOpen = open;
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navMenu.classList.toggle('nav-menu--open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      if (isOpen) {
+        const focusable = navMenu.querySelectorAll<HTMLElement>(
+          'a, button, [tabindex]:not([tabindex="-1"])'
+        );
+        focusable[0]?.focus();
+      } else {
+        navToggle.focus();
+      }
+    };
+
+    navToggle.addEventListener('click', () => setOpen(!isOpen));
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (isOpen && !navMenu.contains(target) && !navToggle.contains(target)) {
+        setOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setOpen(false);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && isOpen) {
+        setOpen(false);
+      }
+    });
+  }
+</script>

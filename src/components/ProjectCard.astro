@@ -111,3 +111,9 @@ const { project } = Astro.props;
     border-bottom-color: var(--color-primary);
   }
 </style>
+
+<script>
+  import { revealOnScroll } from '../scripts/scroll-reveal';
+
+  revealOnScroll('.project-card');
+</script>
