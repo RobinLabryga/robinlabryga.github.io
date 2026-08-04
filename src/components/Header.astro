@@ -23,3 +23,201 @@
     </ul>
   </nav>
 </header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: hsla(var(--color-background-hsl), 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border-light);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-normal);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .nav-container {
+      padding: 0 var(--space-xl);
+    }
+  }
+
+  .nav-brand {
+    flex-shrink: 0;
+  }
+
+  .brand-link {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .brand-text {
+    white-space: nowrap;
+  }
+
+  .brand-link:hover,
+  .brand-link:focus {
+    color: var(--color-primary);
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: var(--z-modal);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+  }
+
+  .nav-toggle:hover {
+    background: var(--color-surface);
+  }
+
+  .nav-toggle:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .hamburger {
+    width: 1.75rem;
+    height: 3px;
+    background: var(--color-text);
+    transition: all var(--transition-normal);
+    transform-origin: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .hamburger:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: hsla(var(--color-background-hsl), 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3xl);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: all var(--transition-normal);
+    z-index: var(--z-fixed);
+  }
+
+  .nav-menu.nav-menu--open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  @media (min-width: 768px) {
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav-menu {
+      position: static;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      gap: var(--space-lg);
+      background: none;
+      backdrop-filter: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-background);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-width: 200px;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+  }
+
+  @media (min-width: 768px) {
+    .nav-link {
+      display: inline-block;
+      font-size: var(--font-size-base);
+      font-weight: 500;
+      padding: var(--space-sm) var(--space-md);
+      border: none;
+      background: none;
+      min-width: auto;
+    }
+
+    .nav-link:hover {
+      background: var(--color-surface);
+      color: var(--color-primary);
+      transform: none;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  .nav-link[aria-current="page"] {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+</style>

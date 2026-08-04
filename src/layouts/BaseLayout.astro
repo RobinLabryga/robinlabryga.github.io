@@ -77,3 +77,26 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script is:inline src="/registerSW.js"></script>
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-background);
+    color: var(--color-text);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    z-index: var(--z-tooltip);
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  .main-content {
+    margin-top: 4rem;
+  }
+</style>

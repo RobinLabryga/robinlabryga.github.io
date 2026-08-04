@@ -13,3 +13,21 @@ const papers = await getCollection('papers');
     </div>
   </div>
 </section>
+
+<style>
+  .papers {
+    padding: var(--space-5xl) 0;
+    background: var(--color-background);
+  }
+
+  .papers-grid {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .papers-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+</style>

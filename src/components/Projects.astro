@@ -11,3 +11,32 @@ import ProjectCard from './ProjectCard.astro';
     </div>
   </div>
 </section>
+
+<style>
+  .projects {
+    padding: var(--space-5xl) 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+
+  @container (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @container (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

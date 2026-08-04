@@ -29,3 +29,85 @@ const { project } = Astro.props;
     </div>
   </div>
 </article>
+
+<style>
+  .project-card {
+    background: var(--color-background);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-border);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .project-image {
+    height: 200px;
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .project-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+
+  .project-card:hover .project-placeholder {
+    transform: scale(1.05);
+  }
+
+  .project-content {
+    padding: var(--space-xl);
+  }
+
+  .project-title {
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .project-description {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .tech-tag {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+  }
+
+  .project-links {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .project-link {
+    color: var(--color-primary);
+    font-weight: 500;
+    padding: var(--space-sm) 0;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
+  }
+
+  .project-link:hover {
+    border-bottom-color: var(--color-primary);
+  }
+</style>
