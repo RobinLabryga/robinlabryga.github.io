@@ -6,6 +6,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://robinlabryga.github.io',
   output: 'static',
+  prefetch: true,
   integrations: [
     icon(),
     sitemap({
