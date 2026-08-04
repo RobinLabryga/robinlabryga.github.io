@@ -15,4 +15,6 @@ if (warnings.length) {
   console.warn(warnings.join('\n'));
 }
 
-console.log(`Generated dist/sw.js, precaching ${count} files (${(size / 1024).toFixed(1)} KiB)`);
+console.log(
+  `Generated dist/sw.js, precaching ${count} files (${(size / 1024).toFixed(1)} KiB)`,
+);

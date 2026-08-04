@@ -21,7 +21,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Project Two',
-    description: 'Real project will appear here, once I get around to adding them.',
+    description:
+      'Real project will appear here, once I get around to adding them.',
     image: '/assets/project2-placeholder.svg',
     tech: ['Python', 'Torch'],
     websiteUrl: '#',

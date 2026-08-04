@@ -2,87 +2,92 @@
    CSS Custom Properties (Variables)
    =========================== */
 :root {
-    /* Unified color scheme - optimized for dark mode */
-    --color-primary: hsl(217, 91%, 70%);
-    --color-primary-dark: hsl(217, 91%, 60%);
-    --color-primary-light: hsl(217, 91%, 80%);
-    --color-secondary: hsl(342, 89%, 58%);
-    --color-accent: hsl(51, 100%, 60%);
+  /* Unified color scheme - optimized for dark mode */
+  --color-primary: hsl(217, 91%, 70%);
+  --color-primary-dark: hsl(217, 91%, 60%);
+  --color-primary-light: hsl(217, 91%, 80%);
+  --color-secondary: hsl(342, 89%, 58%);
+  --color-accent: hsl(51, 100%, 60%);
 
-    /* Dark theme neutral colors */
-    --color-text: hsl(210, 20%, 98%);
-    --color-text-muted: hsl(210, 10%, 75%);
-    --color-text-light: hsl(210, 10%, 65%);
-    --color-background: hsl(210, 20%, 4%);
-    --color-surface: hsl(210, 15%, 8%);
-    --color-border: hsl(210, 15%, 25%);
-    --color-border-light: hsl(210, 15%, 20%);
+  /* Dark theme neutral colors */
+  --color-text: hsl(210, 20%, 98%);
+  --color-text-muted: hsl(210, 10%, 75%);
+  --color-text-light: hsl(210, 10%, 65%);
+  --color-background: hsl(210, 20%, 4%);
+  --color-surface: hsl(210, 15%, 8%);
+  --color-border: hsl(210, 15%, 25%);
+  --color-border-light: hsl(210, 15%, 20%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
 
-    /* Typography */
-    --font-family-base: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography */
+  --font-family-base:
+    'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
 
-    /* Fluid typography scales */
-    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-    --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);
-    --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3.5rem);
+  /* Fluid typography scales */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3.5rem);
 
-    /* Line heights */
-    --line-height-tight: 1.25;
-    --line-height-snug: 1.375;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.625;
-    --line-height-loose: 2;
+  /* Line heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
 
-    /* Spacing scale */
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
-    --space-4xl: 6rem;
-    --space-5xl: 8rem;
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
 
-    /* Breakpoints (for container queries) */
-    --breakpoint-sm: 640px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1280px;
-    --breakpoint-2xl: 1536px;
+  /* Breakpoints (for container queries) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
-    /* Animation */
-    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Animation */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Border radius */
-    --radius-sm: 0.125rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
-    --radius-full: 9999px;
+  /* Border radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
 
-    /* Z-index scale */
-    --z-dropdown: 1000;
-    --z-sticky: 1020;
-    --z-fixed: 1030;
-    --z-modal-backdrop: 1040;
-    --z-modal: 1050;
-    --z-popover: 1060;
-    --z-tooltip: 1070;
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
 }
 
 /* Layer order (low to high priority). Astro's per-component <style> blocks are
@@ -94,214 +99,218 @@
    Reset
    =========================== */
 @layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
-        box-sizing: border-box;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
+  }
 
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 5rem;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-    }
-
-    body {
-        font-family: var(--font-family-base);
-        font-size: var(--font-size-base);
-        line-height: var(--line-height-normal);
-        color: var(--color-text);
-        background-color: var(--color-background);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        overflow-x: hidden;
-    }
+  body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
 }
 
 /* ===========================
    Base (typography, links, focus)
    =========================== */
 @layer base {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: 700;
-        line-height: var(--line-height-tight);
-        letter-spacing: -0.025em;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.025em;
+  }
 
-    h1 {
-        font-size: var(--font-size-4xl);
-    }
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
 
-    h2 {
-        font-size: var(--font-size-3xl);
-    }
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
 
-    h3 {
-        font-size: var(--font-size-2xl);
-    }
+  h3 {
+    font-size: var(--font-size-2xl);
+  }
 
-    h4 {
-        font-size: var(--font-size-xl);
-    }
+  h4 {
+    font-size: var(--font-size-xl);
+  }
 
-    h5 {
-        font-size: var(--font-size-lg);
-    }
+  h5 {
+    font-size: var(--font-size-lg);
+  }
 
-    h6 {
-        font-size: var(--font-size-base);
-    }
+  h6 {
+    font-size: var(--font-size-base);
+  }
 
-    p {
-        margin-bottom: var(--space-md);
-    }
+  p {
+    margin-bottom: var(--space-md);
+  }
 
-    a {
-        color: var(--color-primary);
-        text-decoration: none;
-        transition: color var(--transition-fast);
-    }
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
 
-    a:hover,
-    a:focus {
-        color: var(--color-primary-dark);
-    }
+  a:hover,
+  a:focus {
+    color: var(--color-primary-dark);
+  }
 
-    a:focus {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
-    }
+  a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 
-    .keyboard-navigation *:focus {
-        outline: 2px solid var(--color-primary) !important;
-        outline-offset: 2px !important;
-    }
+  .keyboard-navigation *:focus {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: 2px !important;
+  }
 }
 
 /* ===========================
    Components (shared, cross-page primitives)
    =========================== */
 @layer components {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  @media (min-width: 768px) {
     .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 var(--space-md);
+      padding: 0 var(--space-xl);
     }
+  }
 
-    @media (min-width: 768px) {
-        .container {
-            padding: 0 var(--space-xl);
-        }
-    }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+  }
 
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left var(--transition-slow);
+  }
+
+  .btn:hover::before {
+    left: 100%;
+  }
+
+  .btn--primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn--primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-surface);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  @media (max-width: 767px) {
     .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--space-md) var(--space-xl);
-        font-size: var(--font-size-base);
-        font-weight: 600;
-        text-decoration: none;
-        border: none;
-        border-radius: var(--radius-lg);
-        cursor: pointer;
-        transition: all var(--transition-fast);
-        position: relative;
-        overflow: hidden;
+      text-align: center;
     }
+  }
 
-    .btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent);
-        transition: left var(--transition-slow);
-    }
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+    position: relative;
+  }
 
-    .btn:hover::before {
-        left: 100%;
-    }
-
-    .btn--primary {
-        background: var(--color-primary);
-        color: white;
-    }
-
-    .btn--primary:hover {
-        background: var(--color-primary-dark);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-    }
-
-    .btn--secondary {
-        background: transparent;
-        color: var(--color-text);
-        border: 2px solid var(--color-border);
-    }
-
-    .btn--secondary:hover {
-        background: var(--color-surface);
-        border-color: var(--color-primary);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-    }
-
-    @media (max-width: 767px) {
-        .btn {
-            text-align: center;
-        }
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: var(--space-4xl);
-        position: relative;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: calc(-1 * var(--space-md));
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(90deg,
-                var(--color-primary),
-                var(--color-secondary));
-        border-radius: var(--radius-full);
-    }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: calc(-1 * var(--space-md));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+    border-radius: var(--radius-full);
+  }
 }
 
 /* ===========================
@@ -313,68 +322,67 @@
    specificity alone — a layered rule would lose outright, and even an unlayered one
    would still lose on specificity without !important. */
 @media print {
+  .site-header,
+  .nav-toggle,
+  .scroll-indicator {
+    display: none !important;
+  }
 
-    .site-header,
-    .nav-toggle,
-    .scroll-indicator {
-        display: none !important;
-    }
+  .main-content {
+    margin-top: 0 !important;
+  }
 
-    .main-content {
-        margin-top: 0 !important;
-    }
-
-    body {
-        background: white;
-        color: black;
-    }
+  body {
+    background: white;
+    color: black;
+  }
 }
 
 /* ===========================
    Utility Classes
    =========================== */
 @layer utilities {
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-    }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 
-    .text-center {
-        text-align: center;
-    }
+  .text-center {
+    text-align: center;
+  }
 
-    .text-left {
-        text-align: left;
-    }
+  .text-left {
+    text-align: left;
+  }
 
-    .text-right {
-        text-align: right;
-    }
+  .text-right {
+    text-align: right;
+  }
 
-    .margin-bottom-0 {
-        margin-bottom: 0;
-    }
+  .margin-bottom-0 {
+    margin-bottom: 0;
+  }
 
-    .margin-top-0 {
-        margin-top: 0;
-    }
+  .margin-top-0 {
+    margin-top: 0;
+  }
 
-    /* Scroll Reveal (see src/scripts/scroll-reveal.ts) */
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+  /* Scroll Reveal (see src/scripts/scroll-reveal.ts) */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    .animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  .animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

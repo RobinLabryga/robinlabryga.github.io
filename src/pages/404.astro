@@ -9,7 +9,10 @@ import '../styles/main.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Page not found - Robin Labryga's Personal Website" />
+    <meta
+      name="description"
+      content="Page not found - Robin Labryga's Personal Website"
+    />
     <title>404 - Page Not Found | Robin Labryga</title>
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -23,8 +26,8 @@ import '../styles/main.css';
         <div class="error-code">404</div>
         <h1 class="error-title">Page Not Found</h1>
         <p class="error-description">
-          Oops! The page you're looking for doesn't exist.
-          It might have been moved, deleted, or you entered the wrong URL.
+          Oops! The page you're looking for doesn't exist. It might have been
+          moved, deleted, or you entered the wrong URL.
         </p>
         <div class="error-actions">
           <a href="/" class="btn btn--primary">Go Home</a>
@@ -38,7 +41,9 @@ import '../styles/main.css';
 
       initPage();
 
-      document.getElementById('go-back')?.addEventListener('click', () => history.back());
+      document
+        .getElementById('go-back')
+        ?.addEventListener('click', () => history.back());
     </script>
     <script is:inline src="/registerSW.js"></script>
   </body>
@@ -52,7 +57,11 @@ import '../styles/main.css';
     justify-content: center;
     text-align: center;
     padding: var(--space-xl);
-    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-background) 0%,
+      var(--color-surface) 100%
+    );
   }
 
   .error-content {
@@ -62,7 +71,11 @@ import '../styles/main.css';
   .error-code {
     font-size: clamp(4rem, 12vw, 8rem);
     font-weight: 900;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

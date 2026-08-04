@@ -6,7 +6,11 @@
       </a>
     </div>
 
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <button
+      class="nav-toggle"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+    >
       <span class="hamburger"></span>
       <span class="hamburger"></span>
       <span class="hamburger"></span>
@@ -108,16 +112,16 @@
     margin-bottom: 5px;
   }
 
-  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
+  .nav-toggle[aria-expanded='true'] .hamburger:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
 
-  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(2) {
+  .nav-toggle[aria-expanded='true'] .hamburger:nth-child(2) {
     opacity: 0;
     transform: scale(0);
   }
 
-  .nav-toggle[aria-expanded="true"] .hamburger:nth-child(3) {
+  .nav-toggle[aria-expanded='true'] .hamburger:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
 
@@ -213,7 +217,7 @@
     }
   }
 
-  .nav-link[aria-current="page"] {
+  .nav-link[aria-current='page'] {
     color: var(--color-primary);
     font-weight: 600;
   }
@@ -235,7 +239,7 @@
 
       if (isOpen) {
         const focusable = navMenu.querySelectorAll<HTMLElement>(
-          'a, button, [tabindex]:not([tabindex="-1"])'
+          'a, button, [tabindex]:not([tabindex="-1"])',
         );
         focusable[0]?.focus();
       } else {

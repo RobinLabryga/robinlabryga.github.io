@@ -11,7 +11,7 @@ const papers = defineCollection({
         z.object({
           name: z.string(),
           url: z.string(),
-        })
+        }),
       )
       .min(1),
     year: z.number().int(),

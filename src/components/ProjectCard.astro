@@ -11,11 +11,21 @@ const { project } = Astro.props;
 
 <article class="project-card">
   <div class="project-image">
-    {typeof project.image === 'string' ? (
-      <img src={project.image} alt={`${project.title} preview`} class="project-placeholder" />
-    ) : (
-      <Image src={project.image} alt={project.title} class="project-placeholder" />
-    )}
+    {
+      typeof project.image === 'string' ? (
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          class="project-placeholder"
+        />
+      ) : (
+        <Image
+          src={project.image}
+          alt={project.title}
+          class="project-placeholder"
+        />
+      )
+    }
   </div>
   <div class="project-content">
     <h3 class="project-title">{project.title}</h3>
