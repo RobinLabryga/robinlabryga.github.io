@@ -17,6 +17,8 @@ const { project } = Astro.props;
           src={project.image}
           alt={`${project.title} preview`}
           class="project-placeholder"
+          loading="lazy"
+          decoding="async"
         />
       ) : (
         <Image
@@ -33,10 +35,22 @@ const { project } = Astro.props;
     <div class="project-tech">
       {project.tech.map((tech) => <span class="tech-tag">{tech}</span>)}
     </div>
-    <div class="project-links">
-      <a href={project.websiteUrl} class="project-link">Website</a>
-      <a href={project.sourceUrl} class="project-link">Source Code</a>
-    </div>
+    {
+      (project.websiteUrl || project.sourceUrl) && (
+        <div class="project-links">
+          {project.websiteUrl && (
+            <a href={project.websiteUrl} class="project-link">
+              Website
+            </a>
+          )}
+          {project.sourceUrl && (
+            <a href={project.sourceUrl} class="project-link">
+              Source Code
+            </a>
+          )}
+        </div>
+      )
+    }
   </div>
 </article>
 

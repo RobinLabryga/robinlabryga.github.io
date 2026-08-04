@@ -6,8 +6,8 @@ export interface Project {
   description: string;
   image: ImageMetadata | string;
   tech: string[];
-  websiteUrl: string;
-  sourceUrl: string;
+  websiteUrl?: string;
+  sourceUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -25,8 +25,6 @@ export const projects: Project[] = [
       'Real project will appear here, once I get around to adding them.',
     image: '/assets/project2-placeholder.svg',
     tech: ['Python', 'Torch'],
-    websiteUrl: '#',
-    sourceUrl: '#',
   },
   {
     title: 'This Website',
