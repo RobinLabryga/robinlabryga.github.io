@@ -28,7 +28,7 @@ import '../styles/main.css';
         </p>
         <div class="error-actions">
           <a href="/" class="btn btn--primary">Go Home</a>
-          <button onclick="history.back()" class="btn btn--secondary">Go Back</button>
+          <button id="go-back" class="btn btn--secondary">Go Back</button>
         </div>
       </div>
     </main>
@@ -37,6 +37,8 @@ import '../styles/main.css';
       import { initPage } from '../scripts/page';
 
       initPage();
+
+      document.getElementById('go-back')?.addEventListener('click', () => history.back());
     </script>
     <script is:inline src="/registerSW.js"></script>
   </body>
