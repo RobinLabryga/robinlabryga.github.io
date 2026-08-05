@@ -2,7 +2,9 @@
 import { getCollection } from 'astro:content';
 import PaperCard from './PaperCard.astro';
 
-const papers = await getCollection('papers');
+const papers = (await getCollection('papers')).sort(
+  (a, b) => b.data.year - a.data.year,
+);
 
 const scholarlyArticles = papers.map((entry) => ({
   '@context': 'https://schema.org',
