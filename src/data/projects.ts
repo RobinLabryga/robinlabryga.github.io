@@ -28,7 +28,8 @@ export const projects: Project[] = [
   },
   {
     title: 'This Website',
-    description: '',
+    description:
+      'This portfolio site itself — Astro, statically generated and deployed to GitHub Pages.',
     image: '/assets/project3-placeholder.svg',
     tech: ['HTML', 'CSS', 'JavaScript', 'Vibe Coding'],
     websiteUrl: 'https://robinlabryga.github.io/',

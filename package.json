@@ -3,12 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/generate-sw.mjs",
+    "build": "astro build && node scripts/inject-csp.mjs && node scripts/generate-sw.mjs",
     "preview": "astro preview",
     "check": "astro check",
+    "test:a11y": "node scripts/check-a11y.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -25,9 +29,12 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
+    "@types/jsdom": "^28.0.3",
+    "axe-core": "^4.12.1",
     "eslint": "^10.8.0",
     "eslint-plugin-astro": "^3.1.0",
     "globals": "^17.9.0",
+    "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3",

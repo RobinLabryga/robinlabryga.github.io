@@ -261,8 +261,31 @@
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
         setOpen(false);
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+
+      const focusable = [
+        navToggle,
+        ...navMenu.querySelectorAll<HTMLElement>(
+          'a, button, [tabindex]:not([tabindex="-1"])',
+        ),
+      ];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!first || !last) return;
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
 
@@ -271,5 +294,33 @@
         setOpen(false);
       }
     });
+  }
+
+  const sections = Array.from(navLinks)
+    .map((link) => document.querySelector<HTMLElement>(link.hash))
+    .filter((section): section is HTMLElement => section !== null);
+
+  if (sections.length) {
+    const setActiveLink = (id: string) => {
+      navLinks.forEach((link) => {
+        if (link.hash === `#${id}`) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const active = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (active) setActiveLink(active.target.id);
+      },
+      { rootMargin: '-64px 0px -60% 0px' },
+    );
+
+    sections.forEach((section) => observer.observe(section));
   }
 </script>

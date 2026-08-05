@@ -10,7 +10,8 @@ export default defineConfig({
   integrations: [
     icon(),
     sitemap({
-      filter: (page) => !page.endsWith('/404.html'),
+      filter: (page) =>
+        !page.endsWith('/404.html') && !page.includes('/papers/'),
       customPages: ['https://robinlabryga.github.io/GeoProdViz2D/'],
     }),
   ],
@@ -27,7 +28,7 @@ export default defineConfig({
           description: 'Personal website showcasing random things I do.',
           start_url: '/',
           display: 'standalone',
-          background_color: '#ffffff',
+          background_color: '#080a0c',
           theme_color: '#3B82F6',
           orientation: 'portrait-primary',
           icons: [
@@ -35,7 +36,37 @@ export default defineConfig({
               src: '/assets/favicon.svg',
               sizes: 'any',
               type: 'image/svg+xml',
-              purpose: 'any maskable',
+              purpose: 'any',
+            },
+            {
+              src: '/assets/favicon-maskable.svg',
+              sizes: 'any',
+              type: 'image/svg+xml',
+              purpose: 'maskable',
+            },
+            {
+              src: '/assets/icon-192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'any',
+            },
+            {
+              src: '/assets/icon-512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'any',
+            },
+            {
+              src: '/assets/icon-maskable-192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'maskable',
+            },
+            {
+              src: '/assets/icon-maskable-512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'maskable',
             },
           ],
           categories: ['portfolio', 'personal', 'professional'],

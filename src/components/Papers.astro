@@ -3,6 +3,21 @@ import { getCollection } from 'astro:content';
 import PaperCard from './PaperCard.astro';
 
 const papers = await getCollection('papers');
+
+const scholarlyArticles = papers.map((entry) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: entry.data.title,
+  author: entry.data.authors.map((author) => ({
+    '@type': 'Person',
+    name: author.name,
+    url: author.url,
+  })),
+  datePublished: String(entry.data.year),
+  keywords: entry.data.keywords,
+  url: entry.data.arxivUrl,
+  sameAs: entry.data.arxivUrl,
+}));
 ---
 
 <section id="papers" class="papers" aria-labelledby="papers-title">
@@ -13,6 +28,12 @@ const papers = await getCollection('papers');
     </div>
   </div>
 </section>
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(scholarlyArticles)}
+/>
 
 <style>
   .papers {

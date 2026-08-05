@@ -1,8 +1,8 @@
 ---
 import { getImage } from 'astro:assets';
-import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import HeadMeta from '../components/HeadMeta.astro';
 import avatar from '../assets/images/avatar.jpg';
 import '@fontsource-variable/inter';
 import '../styles/main.css';
@@ -25,8 +25,8 @@ const ogImageURL = new URL(ogImage.src, Astro.site);
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <HeadMeta title={title} />
+
     <meta name="description" content={description} />
     <meta
       name="keywords"
@@ -60,33 +60,33 @@ const ogImageURL = new URL(ogImage.src, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImageURL} />
 
-    <title>{title}</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.webmanifest" />
-
     <!-- Structured Data -->
     <script
       is:inline
       type="application/ld+json"
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Robin Labryga',
-        url: 'https://robinlabryga.github.io',
-        sameAs: [
-          'https://www.linkedin.com/in/robin-labryga/',
-          'https://twitter.com/RobinLabryga',
-          'https://gitlab.com/robin.labryga',
-          'https://github.com/RobinLabryga',
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            name: 'Robin Labryga - Personal Website',
+            url: 'https://robinlabryga.github.io',
+            description: 'Personal website showcasing random things I do.',
+          },
+          {
+            '@type': 'Person',
+            name: 'Robin Labryga',
+            url: 'https://robinlabryga.github.io',
+            sameAs: [
+              'https://www.linkedin.com/in/robin-labryga/',
+              'https://twitter.com/RobinLabryga',
+              'https://gitlab.com/robin.labryga',
+              'https://github.com/RobinLabryga',
+            ],
+          },
         ],
       })}
     />
-
-    <ClientRouter />
   </head>
 
   <body>

@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import HeadMeta from '../components/HeadMeta.astro';
 import '@fontsource-variable/inter';
 import '../styles/main.css';
 ---
@@ -7,17 +7,11 @@ import '../styles/main.css';
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <HeadMeta title="404 - Page Not Found | Robin Labryga" />
     <meta
       name="description"
       content="Page not found - Robin Labryga's Personal Website"
     />
-    <title>404 - Page Not Found | Robin Labryga</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-
-    <ClientRouter />
   </head>
 
   <body>
