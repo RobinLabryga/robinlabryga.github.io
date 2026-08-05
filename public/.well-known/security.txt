@@ -1,0 +1,4 @@
+Contact: mailto:robin.labryga@uni-hamburg.de
+Expires: 2027-08-05T00:00:00.000Z
+Canonical: https://robinlabryga.github.io/.well-known/security.txt
+Preferred-Languages: en

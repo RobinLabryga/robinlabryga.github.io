@@ -1,0 +1,36 @@
+---
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section id="projects" class="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <h2 id="projects-title" class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: var(--space-5xl) 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+</style>
+
+<script>
+  import { revealOnScroll } from '../scripts/scroll-reveal';
+
+  revealOnScroll('#projects-title');
+</script>

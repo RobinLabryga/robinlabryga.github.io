@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((entry) => ({
+    params: { slug: entry.id },
+    props: { arxivUrl: entry.data.arxivUrl },
+  }));
+}
+
+return Astro.redirect(Astro.props.arxivUrl, 301);
+---

@@ -1,0 +1,176 @@
+---
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeadMeta from '../components/HeadMeta.astro';
+import avatar from '../assets/images/avatar.jpg';
+import '@fontsource-variable/inter';
+import '../styles/main.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Robin Labryga - Personal website showcasing random things I do.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = await getImage({ src: avatar, format: 'jpg' });
+const ogImageURL = new URL(ogImage.src, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <HeadMeta title={title} />
+
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Robin Labryga, portfolio, personal, professional"
+    />
+    <meta name="author" content="Robin Labryga" />
+    <meta
+      name="google-site-verification"
+      content="rD76Hgk7xGLGyXSqXhRfnjPUQf-sL8O88JCqMPFvPbM"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta
+      property="og:image:width"
+      content={String(ogImage.attributes.width ?? avatar.width)}
+    />
+    <meta
+      property="og:image:height"
+      content={String(ogImage.attributes.height ?? avatar.height)}
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImageURL} />
+
+    <!-- Structured Data -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            name: 'Robin Labryga - Personal Website',
+            url: 'https://robinlabryga.github.io',
+            description: 'Personal website showcasing random things I do.',
+          },
+          {
+            '@type': 'Person',
+            name: 'Robin Labryga',
+            url: 'https://robinlabryga.github.io',
+            sameAs: [
+              'https://www.linkedin.com/in/robin-labryga/',
+              'https://twitter.com/RobinLabryga',
+              'https://gitlab.com/robin.labryga',
+              'https://github.com/RobinLabryga',
+            ],
+          },
+        ],
+      })}
+    />
+  </head>
+
+  <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <Header />
+
+    <main id="main-content" class="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import { initPage } from '../scripts/page';
+
+      initPage();
+
+      // Native `scroll-behavior: smooth` + `scroll-padding-top` (see main.css)
+      // already handle the smooth, header-offset-aware scroll; this only adds
+      // focus management so keyboard/screen-reader users land on the target.
+      document.addEventListener('click', (e) => {
+        const link = (e.target as Element).closest<HTMLAnchorElement>(
+          'a[href^="#"]',
+        );
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector<HTMLElement>(href);
+        if (!target) return;
+
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+        target.addEventListener(
+          'blur',
+          () => target.removeAttribute('tabindex'),
+          { once: true },
+        );
+      });
+
+      const skipLink = document.querySelector<HTMLAnchorElement>('.skip-link');
+      skipLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector<HTMLElement>('#main-content');
+        if (!target) return;
+
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+        target.addEventListener(
+          'blur',
+          () => target.removeAttribute('tabindex'),
+          { once: true },
+        );
+      });
+    </script>
+    <script is:inline src="/registerSW.js"></script>
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-background);
+    color: var(--color-text);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    z-index: var(--z-tooltip);
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  .main-content {
+    margin-top: 4rem;
+  }
+</style>

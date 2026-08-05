@@ -1,0 +1,150 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 id="contact-title" class="section-title">Let's Connect</h2>
+    <div class="contact-content">
+      <p class="contact-description">
+        I'm always interested in new opportunities and collaborations. Feel free
+        to reach out if you'd like to discuss a project or just say hello!
+      </p>
+      <div class="contact-links">
+        <a
+          href="https://www.linkedin.com/in/robin-labryga/"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="fa6-brands:linkedin"
+            class="contact-icon"
+            aria-hidden="true"
+          />
+          LinkedIn
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+        <a
+          href="https://twitter.com/RobinLabryga"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="fa6-brands:twitter"
+            class="contact-icon"
+            aria-hidden="true"
+          />
+          Twitter
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+        <a
+          href="https://github.com/RobinLabryga"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="fa6-brands:github"
+            class="contact-icon"
+            aria-hidden="true"
+          />
+          GitHub
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+        <a
+          href="https://gitlab.com/robin.labryga"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="fa6-brands:gitlab"
+            class="contact-icon"
+            aria-hidden="true"
+          />
+          GitLab
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+        <a href="mailto:robin.labryga@uni-hamburg.de" class="contact-link">
+          <Icon
+            name="fa6-regular:envelope"
+            class="contact-icon"
+            aria-hidden="true"
+          />
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: var(--space-5xl) 0;
+    background: var(--color-surface);
+  }
+
+  .contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3xl);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 767px) {
+    .contact-links {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--color-background);
+    color: var(--color-text);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--color-border);
+  }
+
+  .contact-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* .contact-icon targets the <svg> rendered by the astro-icon <Icon> child
+     component, so it needs :global() — Astro's scoping attribute isn't
+     threaded through third-party child components. */
+  :global(.contact-icon) {
+    font-size: 1.5rem;
+    margin-right: var(--space-sm);
+  }
+</style>
+
+<script>
+  import { revealOnScroll } from '../scripts/scroll-reveal';
+
+  revealOnScroll('#contact-title, .contact-content');
+</script>
